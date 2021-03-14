@@ -51,9 +51,9 @@ def about():
 
 @app.route('/setting')
 def setting():
-    data=W106("192.168.88.15", 8080)
-    print (data.LowT1Start)
-    
+    #data=W106("192.168.88.15", 8080)
+    print(request.args.get("name"))
+    data = ""
     return render_template("setting.html", data=data)
 
 @app.route('/form', methods=["POST"])
