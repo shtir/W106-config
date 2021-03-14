@@ -7,23 +7,14 @@ class W106:
     def __init__(self, address, port):
         c = ModbusClient()
         c.host(address)
-        #c.host("192.168.88.15")
-        #c.port(8080)
         c.port(port)
         c.unit_id(1)
         c.open()
         if (True):
             data = c.read_holding_registers(130, 12)
             self.data=data
-
-            #self.data=voltAmper
-            
-            #print(voltAmper)
-            #voltAmper = c.read_input
-            #print(voltAmper)
             c.close()
             if data:
-                #self.LowT1Start = (data[0] << 16 | data[1])/10
                 self.LowT1Start = format(data[0], 'x')
                 self.LowT1Stop = format(data[1], 'x')
                 self.LowT2Start = format(data[2], 'x')
