@@ -51,7 +51,7 @@ def form():
 
     if not data.first_name or not data.last_name or not data.email:
         erro_statement = "All Form fild Required..."
-        return render_template("setting.html", data=data, error_statement=erro_statement)
+        return render_template("index.html", data=data, error_statement=erro_statement)
     
     return render_template("form.html", data=data)
 
