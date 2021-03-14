@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<div class="container">
+  <h1>Hello, {{names.1}}</h1>
+  <ul>
+    {% for name in names %}
+    <li>
+      {{name}}
+    </li>
+    {%endfor%}
+  </ul>
+</div>
+{% endblock%}
+
+{%block title%}
+EMS - Main
+{%endblock%}
