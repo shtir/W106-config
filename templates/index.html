@@ -1,11 +1,113 @@
 {% extends 'base.html'%}
-
 {%block title%}
-EMS - Main
+EMS - Setting
 {%endblock%}
-
 {% block content%}
 <div class="container">
-  <h1>Hello, world!</h1>
+  {% if error_statement%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{ error_statement}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
+
+  <form class="form-floating" action="/form" method="POST">
+
+    <div class="row">
+      <div class="col">
+        <label><b>Time setting</b></label>
+      </div>
+      <div class="col">
+        <label><b>Time 1 Start</b></label>
+      </div>
+      <div class="col">
+        <label><b>Time 1 Stop</b></label>
+      </div>
+      <div class="col">
+        <label><b>Time 2 Start</b></label>
+      </div>
+      <div class="col">
+        <label><b>Time 2 Stop</b></label>
+      </div>
+    </div>
+    <br />
+
+
+    <div class="row">
+      <div class="col">
+        <label><b>Low Time: </b></label>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.LowT1Start }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.LowT1Stop }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.LowT2Start }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.LowT2Stop }}">
+      </div>
+    </div>
+    </br>
+
+
+    <div class="row">
+      <div class="col">
+        <label><b>Normal Time: </b></label>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.NormT1Start }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.NormT1Stop }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.NormT2Start }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.NormT2Stop }}">
+      </div>
+    </div>
+    </br>
+
+
+    <div class="row">
+      <div class="col">
+        <label><b>Peak Time: </b></label>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.PeakT1Start }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.PeakT1Stop }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.PeakT2Start }}">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" value="{{ data.PeakT2Stop }}">
+      </div>
+    </div>
+    </br>
+
+    <div class="row">
+      <div class="col">
+        <label><b>Password: </b></label>
+      </div>
+      <div class="col">
+        <input type="password" class="form-control">
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+      <div class="col">
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </form>
 </div>
 {% endblock%}

@@ -36,14 +36,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
-
-@app.route('/setting')
-def setting():
     #data=W106("192.168.88.15", 8080)
     print(request.args.get("name"))
     data = ""
-    return render_template("setting.html", data=data)
+    return render_template("index.html", data=data)
+
 
 @app.route('/form', methods=["POST"])
 def form():
