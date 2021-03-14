@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from pyModbusTCP.client import ModbusClient
 
-
 class W106:
 
     def __init__(self, address, port):
@@ -33,21 +32,11 @@ class W106:
             else:
                 print("Read Volt And Amper ERROR")
                 
-
-
-
-
 app = Flask(__name__)
-
 
 @app.route('/')
 def index():
     return render_template("index.html")
-
-@app.route('/about')
-def about():
-    names = ['SHahab', 'ali', 'test']
-    return render_template("about.html", names=names)
 
 @app.route('/setting')
 def setting():
