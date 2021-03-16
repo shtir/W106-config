@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from pyModbusTCP.client import ModbusClient
 from idselector import idselector
+#from pprint import pprint
 
 class W106:
 
@@ -36,10 +37,11 @@ app = Flask(__name__)
 def index():
     id = request.args.get("id")
     if (id):
-        idselector(id)
-    #data=W106("192.168.88.15", 8080)
-    print(request.args.get("name"))
-    data = ""
+        info = idselector(id)
+    else:
+        data = ""
+    data = W106(info.ipAddress, info.port)
+    #pprint(vars(data))
     return render_template("index.html", data=data)
 
 
