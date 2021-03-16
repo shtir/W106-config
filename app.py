@@ -38,9 +38,10 @@ def index():
     id = request.args.get("id")
     if (id):
         info = idselector(id)
+        data = W106(info.ipAddress, info.port)
     else:
         data = ""
-    data = W106(info.ipAddress, info.port)
+    
     #pprint(vars(data))
     return render_template("index.html", data=data)
 
