@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from pyModbusTCP.client import ModbusClient
-from idselector import *
+from idselector import idselector
 
 class W106:
 
