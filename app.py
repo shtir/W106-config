@@ -39,6 +39,7 @@ def index():
     if (id):
         info = idselector(id)
         data = W106(info.ipAddress, info.port)
+        data.dbname=info.dbname
     else:
         data = ""
     
