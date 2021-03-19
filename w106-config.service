@@ -1,0 +1,12 @@
+[Unit]
+Description=Mashhad Tadbir W106 power quality analyzer
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/W106-config
+ExecStart=python /root/W106-config/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
